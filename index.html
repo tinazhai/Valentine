@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Love You</title>
+<script src="js/jquery.js"></script>
+<script src="js/snowfall.jquery.js"></script>
+<style media="screen">
+p {
+  color: #fff;
+  font-family: Avenir Next, Helvetica Neue, Helvetica, Tahoma, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+}
+p span {
+  display: inline-block;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 500;
+          perspective: 500;
+  -webkit-font-smoothing: antialiased;
+}
+p span::before,
+p span::after {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: -1px;
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  -webkit-transition: all ease-out 0.3s;
+  transition: all ease-out 0.3s;
+  content: attr(data-text);
+}
+p span::before {
+  z-index: 1;
+  color: rgba(0,0,0,0.2);
+  -webkit-transform: scale(1.1, 1) skew(0deg, 20deg);
+          transform: scale(1.1, 1) skew(0deg, 20deg);
+}
+p span::after {
+  z-index: 2;
+  color: #641212;
+  text-shadow: -1px 0 1px #500d0d, 1px 0 1px rgba(0,0,0,0);
+  -webkit-transform: rotateY(-40deg);
+          transform: rotateY(-40deg);
+}
+p span:hover::before {
+  -webkit-transform: scale(1.1, 1) skew(0deg, 5deg);
+          transform: scale(1.1, 1) skew(0deg, 5deg);
+}
+p span:hover::after {
+  -webkit-transform: rotateY(-10deg);
+          transform: rotateY(-10deg);
+}
+p span + span {
+  margin-left: 0.3em;
+}
+@media (min-width: 20em) {
+  p {
+    font-size: 1em;
+  }
+  p span::before,
+  p span::after {
+    display: block;
+  }
+}
+@media (min-width: 30em) {
+  p {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 40em) {
+  p {
+    font-size: 2em;
+  }
+}
+@media (min-width: 60em) {
+  p {
+    font-size: 4em;
+  }
+}
+html,
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  background-color: #641212;
+}
+
+.heart-body {
+            width: 500px;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .snowfall-flakes:before,
+        .snowfall-flakes:after {
+            content: "";
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: block;
+            width: 10px;
+            height: 16px;
+            background: rgba(189, 108, 121, 0.651);
+            border-radius: 5px 5px 1px 1px;
+        }
+
+        .snowfall-flakes:before {
+            -webkit-transform: rotate(-45deg);
+            /* Safari 和 Chrome */
+            -moz-transform: rotate(-45deg);
+            /* Firefox */
+            -ms-transform: rotate(-45deg);
+            /* IE 9 */
+            -o-transform: rotate(-45deg);
+            /* Opera */
+            transform: rotate(-45deg);
+        }
+
+        .snowfall-flakes:after {
+            left: 4px;
+            -webkit-transform: rotate(45deg);
+            /* Safari 和 Chrome */
+            -moz-transform: rotate(45deg);
+            /* Firefox */
+            -ms-transform: rotate(45deg);
+            /* IE 9 */
+            -o-transform: rotate(45deg);
+            /* Opera */
+            transform: rotate(45deg);
+        }
+        
+span{
+    word-break:normal; 
+    width:auto; 
+    display:block; 
+    white-space:nowrap;
+    word-wrap : break-word ;
+    overflow: hidden ;
+}
+</style>
+</head>
+<body translate="no">
+  <div class="heart">
+    <!-- <div class="snowfall-flakes"></div> -->
+  </div>
+<script>
+    $(function () {
+        setTimeout(function () {
+            $(document).snowfall({
+                flakeCount: 30, //设置爱心数目
+                flakeColor: 'none'
+            })
+        }, 2000);
+    })
+</script>
+<div align="center">
+<p aria-label="CodePen">
+     
+    <span data-text="H">H</span>
+    <span data-text="L">L</span>
+    </br>
+    <span data-text="I">I</span>
+    <span data-text=""></span>
+    <span data-text="L">L</span>
+    <span data-text="O">O</span>
+    <span data-text="V">V</span>
+    <span data-text="E">E</span>
+    <span data-text=""></span>
+    <span data-text="U">U</span>
+</p>
+</div>
+</body>
+</html>
